@@ -9,9 +9,30 @@
   </head>
   <body>
     <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <div style="display: flex; gap: 48px;">
+      <div style="
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        width: 400px;
+        height: 400px;
+        background: lightcoral;
+        cursor: move;
+      ">
+        MOVE
+      </div>
+      <div style="
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        width: 400px;
+        height: 400px;
+        background: skyblue;
+        cursor: pointer;
+      ">
+        POINTER
+      </div>
+    </div>
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>

@@ -12,8 +12,21 @@ function createWindow () {
     }
   })
 
+  const secondaryWindow = new BrowserWindow({
+    width: 1200,
+    height: 800,
+    frame: false,
+    transparent: true,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
+
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
+  secondaryWindow.loadFile('secondary.html')
+  secondaryWindow.setIgnoreMouseEvents(true, {forward: true})
+  secondaryWindow.setAlwaysOnTop(true, 'screen-saver');
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
