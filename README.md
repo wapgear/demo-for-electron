@@ -49,6 +49,8 @@ To compare with mouse forwarding disabled, change the call in `main.js` to `seco
 
 A [follow-up investigation](https://github.com/electron/electron/issues/35414#issuecomment-5777674802) reproduced the behavior with this demo on Electron 44.4.3 and Windows 11 ARM64 in Parallels. It recorded cursor flicker with forwarding enabled and none with forwarding disabled, and links to a proposed fix. See the issue for the investigation and validation status.
 
+The upstream discussion is tracked in [Chromium issue #566069560, per-root Aura cursor suppression for click-through windows](https://issues.chromium.org/issues/566069560). It proposes suppressing cursor shape updates from the click-through overlay while preserving forwarded mouse events. The report requests feedback on the approach before preparing a Chromium change; validation with a patched Windows build is still pending.
+
 ## License
 
 [CC0 1.0, Public Domain](LICENSE.md)
